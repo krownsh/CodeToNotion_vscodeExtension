@@ -1,0 +1,82 @@
+{
+  "publisher":"Krownsh",
+  "name": "CodeToNotion",
+  "displayName": "CodeToNotion",
+  "description": "透過套件可以將VS code當中的代碼，儲存到指定的Notion筆記頁面。以便於儲存優秀代碼，並進一步製作相關筆記內容。Through the extension, you can store code from VS Code into a specified Notion notebook page. This allows for saving excellent code and creating related note content.",
+  "version": "1.0.0",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "CodeToNotion",
+      "properties": {
+        "CodeToNotion.token": {
+          "type": "string",
+          "default": ""
+        },
+        "CodeToNotion.databaseId": {
+          "type": "string",
+          "default": ""
+        },
+        "CodeToNotion.pageId": {
+          "type": "string",
+          "default": ""
+        },
+        "CodeToNotion.userId": {
+          "type": "string",
+          "default": ""
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "CodeToNotion.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "CodeToNotion.getNotionToken",
+        "title": "getToken"
+      },
+      {
+        "command": "CodeToNotion.sendCodeToNotion",
+        "title": "sendCodeToNotion"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "CodeToNotion.sendCodeToNotion",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
+    "@vscode/test-electron": "^2.3.6",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.13",
+    "dotenv": "^16.3.1",
+    "node-emoji": "^2.1.0",
+    "uuid": "^9.0.1"
+  }
+}
