@@ -3,7 +3,7 @@
   "name": "CodeToNotion",
   "displayName": "CodeToNotion",
   "description": "透過套件可以將VS code當中的代碼，儲存到指定的Notion筆記頁面。以便於儲存優秀代碼，並進一步製作相關筆記內容。Through the extension, you can store code from VS Code into a specified Notion notebook page. This allows for saving excellent code and creating related note content.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.84.0"
@@ -11,6 +11,10 @@
   "categories": [
     "Other"
   ],
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/krownsh/CodeToNotion_vscodeExtension.git"
+  },
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
